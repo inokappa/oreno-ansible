@@ -1,0 +1,6 @@
+- hosts: test-kitchen
+  sudo: yes
+  gather_facts: no
+  tasks:
+   - name: install the latest version of Apache
+     yum: name=httpd state=latest

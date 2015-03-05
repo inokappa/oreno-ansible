@@ -1,0 +1,9 @@
+set daemon  60 
+set idfile /var/monit/id
+set statefile /var/monit/state
+set mmonit http://{{ monit_user }}:{{ monit_pass }}@{{ mmonit_host }}:8080/collector
+set httpd port 2812 and
+    allow localhost 
+    allow {{ mmonit_host }}
+
+include /etc/monit.d/*

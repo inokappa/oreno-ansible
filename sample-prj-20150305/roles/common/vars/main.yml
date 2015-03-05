@@ -1,0 +1,8 @@
+---
+packages:
+  - htop
+  - monit
+
+mmonit_host: xxx.xxx.xxx.xxx
+mmonit_user: monit
+mmonit_pass: monit

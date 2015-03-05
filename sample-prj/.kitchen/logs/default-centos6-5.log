@@ -1,0 +1,26 @@
+I, [2015-02-26T23:47:53.014133 #83395]  INFO -- default-centos6-5: -----> Creating <default-centos6-5>...
+E, [2015-02-26T23:47:53.014280 #83395] ERROR -- default-centos6-5: Create failed on instance <default-centos6-5>.
+E, [2015-02-26T23:47:53.014351 #83395] ERROR -- default-centos6-5: ------Exception-------
+E, [2015-02-26T23:47:53.014368 #83395] ERROR -- default-centos6-5: Class: Kitchen::ActionFailed
+E, [2015-02-26T23:47:53.014381 #83395] ERROR -- default-centos6-5: Message: Unknown platform 'centos6'
+E, [2015-02-26T23:47:53.014394 #83395] ERROR -- default-centos6-5: ------Backtrace-------
+E, [2015-02-26T23:47:53.014406 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/kitchen-docker-1.7.0/lib/kitchen/driver/docker.rb:159:in `build_dockerfile'
+E, [2015-02-26T23:47:53.014487 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/kitchen-docker-1.7.0/lib/kitchen/driver/docker.rb:183:in `dockerfile'
+E, [2015-02-26T23:47:53.014500 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/kitchen-docker-1.7.0/lib/kitchen/driver/docker.rb:200:in `build_image'
+E, [2015-02-26T23:47:53.014511 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/kitchen-docker-1.7.0/lib/kitchen/driver/docker.rb:81:in `create'
+E, [2015-02-26T23:47:53.014523 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:352:in `public_send'
+E, [2015-02-26T23:47:53.014535 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:352:in `block in perform_action'
+E, [2015-02-26T23:47:53.014546 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:416:in `call'
+E, [2015-02-26T23:47:53.014558 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:416:in `synchronize_or_call'
+E, [2015-02-26T23:47:53.014570 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:381:in `block in action'
+E, [2015-02-26T23:47:53.014581 #83395] ERROR -- default-centos6-5: /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
+E, [2015-02-26T23:47:53.014593 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:380:in `action'
+E, [2015-02-26T23:47:53.014605 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:352:in `perform_action'
+E, [2015-02-26T23:47:53.014616 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:303:in `create_action'
+E, [2015-02-26T23:47:53.014628 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:292:in `block in transition_to'
+E, [2015-02-26T23:47:53.014692 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:291:in `each'
+E, [2015-02-26T23:47:53.014705 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:291:in `transition_to'
+E, [2015-02-26T23:47:53.014717 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/instance.rb:119:in `create'
+E, [2015-02-26T23:47:53.014728 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/command.rb:176:in `public_send'
+E, [2015-02-26T23:47:53.014740 #83395] ERROR -- default-centos6-5: /Library/Ruby/Gems/2.0.0/gems/test-kitchen-1.3.1/lib/kitchen/command.rb:176:in `block (2 levels) in run_action'
+E, [2015-02-26T23:47:53.014752 #83395] ERROR -- default-centos6-5: ----------------------

@@ -1,0 +1,20 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: ansible_playbook
+  playbook: default.yml
+  hosts: test-kitchen
+
+platforms:
+  - name: centos-6
+    driver_config:
+      image: inokappa/centos-ansible
+
+require_chef_omnibus: false
+
+suites:
+  - name: default
+    run_list:
+    attributes:

@@ -1,0 +1,6 @@
+---
+- name: wrapper playbook for kitchen testing "common" and "app"
+  hosts: localhost
+  roles:
+    - common
+    - app

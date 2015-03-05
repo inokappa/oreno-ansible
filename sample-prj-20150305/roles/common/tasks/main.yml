@@ -1,0 +1,17 @@
+- name: delete /var/monit/id
+  command: rm /var/monit/id removes=/var/monit/id
+
+- name: install the latest version of htop
+  yum: name={{ item }} state=latest
+  with_items:
+  - "{{ packages }}"
+
+- name: common file upload
+  copy: src={{ item }} dest=/tmp/ owner=root group=root mode=0644
+  with_fileglob:
+  - ./*
+
+- name: generate monit.conf
+  template: src=monit.conf.j2 dest=/etc/monit.conf owner=root group=root mode=0600
+
+- service: name=monit state=started
