@@ -1,0 +1,4 @@
+- name: install the latest version of apps
+  yum: name={{ item }} state=latest
+  with_items:
+  - "{{ packages }}"
