@@ -13,5 +13,3 @@
 
 - name: generate monit.conf
   template: src=monit.conf.j2 dest=/etc/monit.conf owner=root group=root mode=0600
-
-- service: name=monit state=started
