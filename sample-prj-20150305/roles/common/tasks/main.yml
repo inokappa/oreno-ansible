@@ -1,8 +1,18 @@
+- yum: name={{item}}
+  with_items:
+    - http://ftp-srv2.kddilabs.jp/Linux/distributions/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
+    - http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+
+- replace: dest=/etc/yum.repos.d/{{item}} regexp="enabled *= *1" replace="enabled=0"
+  with_items:
+    - epel.repo
+    - rpmforge.repo
+
 - name: delete /var/monit/id
   command: rm /var/monit/id removes=/var/monit/id
 
 - name: install the latest version of htop
-  yum: name={{ item }} state=latest
+  yum: name={{ item }} state=latest enablerepo=rpmforge
   with_items:
   - "{{ packages }}"
 
@@ -13,3 +23,6 @@
 
 - name: generate monit.conf
   template: src=monit.conf.j2 dest=/etc/monit.conf owner=root group=root mode=0600
+
+- name: start monit
+  service: name=monit state=started
