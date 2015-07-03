@@ -4,7 +4,7 @@ require 'docker'
 require 'json'
 
 docker_host = "127.0.0.1" # localhost docker
-target_host_name = "monitoring"
+target_host_name = "consul_"
 target_user_name = "ansible"
 target_user_pass = "ansible"
 

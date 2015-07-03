@@ -1,4 +1,4 @@
-MAINTAINER YOHEI KAWAHARA inokappa
+# MAINTAINER YOHEI KAWAHARA inokappa
 FROM centos:centos6
 RUN yum clean all
 RUN yum install -y sudo openssh-server openssh-clients which curl
