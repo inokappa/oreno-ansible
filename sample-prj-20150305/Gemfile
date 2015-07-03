@@ -4,4 +4,4 @@ gem 'test-kitchen'
 gem 'kitchen-ansible'
 gem 'kitchen-docker'
 gem "docker-api"
-gem "serverspec", '1.16.0'
+gem "serverspec"

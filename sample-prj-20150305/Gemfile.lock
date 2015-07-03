@@ -2,8 +2,12 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    docker (0.0.1)
+    docker-api (1.21.4)
+      excon (>= 0.38.0)
+      json
+    excon (0.45.3)
     highline (1.6.21)
+    json (1.8.3)
     kitchen-ansible (0.0.10)
     kitchen-docker (1.7.0)
       test-kitchen (>= 1.0.0)
@@ -42,8 +46,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  docker
+  docker-api
   kitchen-ansible
   kitchen-docker
-  serverspec (= 1.16.0)
+  serverspec
   test-kitchen
+
+BUNDLED WITH
+   1.10.5

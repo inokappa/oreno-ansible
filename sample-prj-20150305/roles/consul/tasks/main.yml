@@ -1,0 +1,24 @@
+- name: create consul group
+  group: name=consul state=present
+
+- name: create consul user
+  user: name=consul shell=/sbin/nologin groups=consul 
+
+- name: create consul date directory
+  file: path=/opt/consul state=directory owner=consul group=consul mode=0755
+
+- name: consul upload
+  copy: src={{ item }} dest=/usr/local/bin/ owner=root group=root mode=0755
+  with_fileglob:
+  - ./usr/local/bin/consul
+
+- name: consul init script upload
+  copy: src={{ item }} dest=/etc/init.d/ owner=root group=root mode=0755
+  with_fileglob:
+  - ./etc/init.d/consul
+
+- name: create consul conf directory
+  file: path=/etc/consul.d/ state=directory owner=consul group=consul mode=0755
+
+- name: generate /etc/consul.d/default.json
+  template: src=./etc/consul.d/default.json.j2 dest=/etc/consul.d/ owner=consul group=consul mode=0644
