@@ -1,0 +1,6 @@
+---
+packages:
+  - tar
+  - wget
+  - vim-enhanced
+  - rsync

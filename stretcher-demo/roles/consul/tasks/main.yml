@@ -1,3 +1,8 @@
+- name: install the latest version of packages
+  yum: name={{ item }} state=latest 
+  with_items:
+  - "{{ packages }}"
+
 - name: create consul group
   group: name=consul state=present
 
