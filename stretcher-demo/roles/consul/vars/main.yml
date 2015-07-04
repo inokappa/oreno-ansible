@@ -4,3 +4,6 @@ packages:
   - wget
   - vim-enhanced
   - rsync
+
+atlas_infrastructure: your_infrastructure
+atlas_token: your_token

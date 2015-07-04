@@ -1,2 +1,3 @@
 .kitchen/
 .kitchen.local.yml
+roles/consul/vars/main.yml.original
