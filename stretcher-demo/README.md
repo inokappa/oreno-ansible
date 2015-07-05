@@ -12,6 +12,14 @@
 
 ## More...
 
+### bundle install
+
+[docker-api](https://rubygems.org/gems/docker-api/versions/1.21.4) 等が必要なので `bundle install` を実行する。
+
+~~~
+bundle install
+~~~
+
 ### docker build
 
 ~~~
