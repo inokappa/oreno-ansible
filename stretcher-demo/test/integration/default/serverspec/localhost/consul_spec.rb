@@ -19,6 +19,19 @@ files.each do |f,mode|
   end
 end
 
+dirs = [ 
+  '/opt/consul', 
+  '/opt/consul-ui', 
+  '/opt/consul-ui/static', 
+]
+dirs.each do |dir|
+  describe file(dir) do
+    it { should be_directory }
+    it { should be_owned_by 'consul' }
+    it { should be_grouped_into 'consul' }
+  end
+end
+
 packages = [
   'tar',
   'wget',

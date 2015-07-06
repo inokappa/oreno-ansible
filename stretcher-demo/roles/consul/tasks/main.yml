@@ -12,10 +12,23 @@
 - name: create consul date directory
   file: path=/opt/consul state=directory owner=consul group=consul mode=0755
 
+- name: create consul ui directory
+  file: path=/opt/consul-ui state=directory owner=consul group=consul mode=0755
+
 - name: consul upload
   copy: src={{ item }} dest=/usr/local/bin/ owner=root group=root mode=0755
   with_fileglob:
   - ./usr/local/bin/*
+
+- name: consul ui index.html upload
+  copy: src={{ item }} dest=/opt/consul-ui/ owner=consul group=consul
+  with_fileglob:
+  - ./opt/consul-ui/index.html
+
+- name: consul ui static upload
+  copy: src={{ item }} dest=/opt/consul-ui/static/ owner=consul group=consul
+  with_fileglob:
+  - ./opt/consul-ui/static/*
 
 - name: consul init script upload
   copy: src={{ item }} dest=/etc/init.d/ owner=root group=root mode=0755
