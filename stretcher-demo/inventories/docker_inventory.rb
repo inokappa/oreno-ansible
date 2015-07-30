@@ -3,8 +3,12 @@
 require 'docker'
 require 'json'
 
-docker_host = "127.0.0.1" # localhost docker
-target_host_name = "consul_"
+# You should comment out either.
+docker_host = "192.168.59.103" # If you're using a boot2docker.
+docker_host = "127.0.0.1"      # If you're using localhost docker.
+
+#
+target_host_name = "consul-"
 target_user_name = "ansible"
 target_user_pass = "ansible"
 

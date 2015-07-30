@@ -42,7 +42,7 @@ $ docker run --name=consul_deploy -t -d -p 22 -p 8000 foo
 vim oreno-ansible/stretcher-demo/roles/consul/vars/main.yml
 ~~~
 
-以下の `your_infrastructure` と `your_token` を取得した token と任意の infrastructure に修正。
+以下の `your_organization/your_infrastructure` と `your_token` を取得した token と任意の infrastructure に修正。
 
 ~~~
 ---
@@ -52,8 +52,24 @@ packages:
   - vim-enhanced
   - rsync
 
-atlas_infrastructure: your_infrastructure
+atlas_infrastructure: your_organization/your_infrastructure
 atlas_token: your_token
+~~~
+
+### Inventory スクリプトの修正
+
+利用している Docker の環境に応じて Inventory スクリプトを修正する。
+
+~~~
+vim oreno-ansible/stretcher-demo/inventories/docker_inventory.rb
+~~~
+
+`docker_host` のいずれかをコメントアウトする。
+
+~~~
+# You should comment out either.
+docker_host = "192.168.59.103" # If you're using a boot2docker.
+docker_host = "127.0.0.1"      # If you're using localhost docker.
 ~~~
 
 ### Playbook の適用
