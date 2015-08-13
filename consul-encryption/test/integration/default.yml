@@ -1,0 +1,5 @@
+---
+- name: wrapper playbook for kitchen testing "consul"
+  hosts: localhost
+  roles:
+    - consul

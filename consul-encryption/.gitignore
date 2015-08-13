@@ -1,0 +1,4 @@
+.kitchen/
+.kitchen.local.yml
+roles/consul/vars/main.yml.original
+roles/consul/files/etc/consul.d/ssl/*

@@ -1,0 +1,47 @@
+- name: install the latest version of packages
+  yum: name={{ item }} state=latest 
+  with_items:
+  - "{{ packages }}"
+
+- name: create consul group
+  group: name=consul state=present
+
+- name: create consul user
+  user: name=consul shell=/sbin/nologin groups=consul 
+
+- name: create consul date directory
+  file: path=/opt/consul state=directory owner=consul group=consul mode=0755
+
+- name: create consul ui directory
+  file: path=/opt/consul-ui state=directory owner=consul group=consul mode=0755
+
+- name: consul upload
+  copy: src={{ item }} dest=/usr/local/bin/ owner=root group=root mode=0755
+  with_fileglob:
+  - ./usr/local/bin/*
+
+- name: consul ui index.html upload
+  copy: src={{ item }} dest=/opt/consul-ui/ owner=consul group=consul
+  with_fileglob:
+  - ./opt/consul-ui/index.html
+
+- name: consul ui static upload
+  copy: src={{ item }} dest=/opt/consul-ui/static/ owner=consul group=consul
+  with_fileglob:
+  - ./opt/consul-ui/static/*
+
+- name: consul init script upload
+  copy: src={{ item }} dest=/etc/init.d/ owner=root group=root mode=0755
+  with_fileglob:
+  - ./etc/init.d/consul
+
+- name: create consul conf directory
+  file: path=/etc/consul.d/ssl state=directory recurse=yes owner=consul group=consul mode=0755
+
+- name: consul ssl files upload
+  copy: src={{ item }} dest=/etc/consul.d/ssl/ owner=consul group=consul mode=0755
+  with_fileglob:
+  - ./etc/consul.d/ssl/*
+
+- name: generate /etc/consul.d/default.json
+  template: src=./etc/consul.d/default.json.j2 dest=/etc/consul.d/default.json owner=consul group=consul mode=0644
