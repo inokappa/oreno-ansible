@@ -1,11 +1,1 @@
----
-packages:
-  - tar
-  - wget
-  - vim-enhanced
-  - rsync
-  - tcpdump
-
-atlas_infrastructure: your_organization/your_infrastructure
-atlas_token: your_token
-consul_encrypt: your_consul_encrypt_key
+main.yml.sample
