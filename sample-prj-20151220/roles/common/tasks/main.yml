@@ -1,0 +1,1 @@
+- file: path=/tmp/sample.txt state=touch mode=0644

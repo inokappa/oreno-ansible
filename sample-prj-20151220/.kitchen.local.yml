@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: ansible_playbook
+  roles_path: roles
+  # require_chef_for_busser: false
+  # require_ruby_for_busser: true
+
+platforms:
+  - name: oreno-ubuntu-14.04
+    driver_plugin: vagrant
+    driver_config:
+      box: ubuntu-14.04
+      box_url: https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+
+suites:
+  - name: default
+    provisioner:
+      playbook: default.yml
+      hosts: default
+
+verifier:
+  name: shell
+  command: rspec -c -f d -I serverspec serverspec/common_spec.rb
