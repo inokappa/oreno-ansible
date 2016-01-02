@@ -15,6 +15,15 @@ platforms:
       container_image: oreno-ubuntu-image
       container_name: kitchen-container
       username: kitchen
+      #
+      # Optional
+      #
+      # architecture: 2
+      # profiles: ["default"]
+      # ephemeral: false
+      # limits_cpu: "1"
+      # timeout: 30
+      # force: true
 
 suites:
   - name: default
